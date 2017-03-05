@@ -13,6 +13,7 @@
 		8BB1BE251E69B13A000CC7A7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8BB1BE241E69B13A000CC7A7 /* Assets.xcassets */; };
 		8BB1BE281E69B13A000CC7A7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8BB1BE261E69B13A000CC7A7 /* LaunchScreen.storyboard */; };
 		8BB1BE331E69B13A000CC7A7 /* ScamLoadingViewExampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BB1BE321E69B13A000CC7A7 /* ScamLoadingViewExampleTests.swift */; };
+		8BB1BE401E69B456000CC7A7 /* ScamLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BB1BE3F1E69B456000CC7A7 /* ScamLoadingView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +37,7 @@
 		8BB1BE2E1E69B13A000CC7A7 /* ScamLoadingViewExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ScamLoadingViewExampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8BB1BE321E69B13A000CC7A7 /* ScamLoadingViewExampleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScamLoadingViewExampleTests.swift; sourceTree = "<group>"; };
 		8BB1BE341E69B13A000CC7A7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8BB1BE3F1E69B456000CC7A7 /* ScamLoadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ScamLoadingView.swift; path = ScamLoadingView/ScamLoadingView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +79,7 @@
 		8BB1BE1C1E69B139000CC7A7 /* ScamLoadingViewExample */ = {
 			isa = PBXGroup;
 			children = (
+				8BB1BE3F1E69B456000CC7A7 /* ScamLoadingView.swift */,
 				8BB1BE1D1E69B13A000CC7A7 /* AppDelegate.swift */,
 				8BB1BE1F1E69B13A000CC7A7 /* ViewController.swift */,
 				8BB1BE211E69B13A000CC7A7 /* Main.storyboard */,
@@ -201,6 +204,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8BB1BE401E69B456000CC7A7 /* ScamLoadingView.swift in Sources */,
 				8BB1BE201E69B13A000CC7A7 /* ViewController.swift in Sources */,
 				8BB1BE1E1E69B13A000CC7A7 /* AppDelegate.swift in Sources */,
 			);
