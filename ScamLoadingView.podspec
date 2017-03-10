@@ -16,8 +16,8 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "ScamLoadingView"
-  s.version      = "0.0.1"
-  s.summary      = "test"
+  s.version      = "0.1.0"
+  s.summary      = "Display a fake loading screen"
 
   # This description is used to generate tags and improve search results.
   #   * Think: What does it do? Why did you write it? What is the focus?
@@ -25,7 +25,10 @@ Pod::Spec.new do |s|
   #   * Write the description between the DESC delimiters below.
   #   * Finally, don't worry about the indent, CocoaPods strips it!
   s.description  = <<-DESC
-  test
+  Display a fake loading screen.
+  For example, it seems that the processing that has already been completed has not yet been completed.
+  Or, it takes a long time to process But, it seems that loading has completed to 80% in a moment.
+  You can do something like this!
                    DESC
 
   s.homepage     = "https://github.com/1234224576/ScamLoadingView"
@@ -64,7 +67,7 @@ Pod::Spec.new do |s|
   #  the deployment target. You can optionally include the target after the platform.
   #
 
-  # s.platform     = :ios
+  s.platform     = :ios
   # s.platform     = :ios, "5.0"
 
   #  When using multiple platforms
