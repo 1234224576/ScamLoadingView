@@ -12,19 +12,30 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-       
-        // Do any additional setup after loading the view, typically from a nib.
     }
-    
-    override func viewDidAppear(_ animated: Bool) {
+ 
+    @IBAction func executeOneShotProcess(_ sender: UIButton) {
         let scam = ScamLoadingView(title: "loading...", limitValue: 0.8, arrivalTime: 10.0)
         self.present(scam.loadingViewController, animated: true, completion: nil)
+        
         scam.complete {
-            print("execute complete handler!")
-//            scam.loadingViewController.dismiss(animated: true, completion: nil)
+            scam.loadingViewController.dismiss(animated: true, completion: nil)
         }
     }
-    
+
+    @IBAction func executeTimeConsumingProcess(_ sender: UIButton) {
+        let scam = ScamLoadingView(title: "loading...", limitValue: 0.8, arrivalTime: 1.0)
+        self.present(scam.loadingViewController, animated: false, completion: nil)
+        
+        DispatchQueue.global(qos: .default).async {
+            Thread.sleep(forTimeInterval: 10.0)
+            DispatchQueue.main.async {
+                scam.complete {
+                    scam.loadingViewController.dismiss(animated: true, completion: nil)
+                }
+            }
+        }
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

@@ -21,7 +21,7 @@ class ScamLoadingView {
     private var completeHandler:(()->())?
     private var hasCompletedTimer = false
     
-    init(title:String,limitValue:Float,arrivalTime:Float) {
+    public init(title:String,limitValue:Float,arrivalTime:Float) {
         loadingViewController = UIAlertController(title: title, message:"\n\n", preferredStyle: .alert)
         
         self.limitValue = limitValue
@@ -39,15 +39,13 @@ class ScamLoadingView {
     
     @objc private func incrementProgress(){
         progressView.progress += limitValue/(arrivalTime * 10.0)
-        percentageLabel.text = String(format: "%.0f", progressView.progress * 100.0) + "%"
+        setPercentageLabel()
         
         currentTime += 0.1
         if currentTime > arrivalTime - 0.001{
             hasCompletedTimer = true
             executeCompleteHandler()
             if let t = timer{
-                print("invalidate")
-                print(progressView.progress)
                 t.invalidate()
             }
         }
@@ -69,18 +67,24 @@ class ScamLoadingView {
         loadingViewController.view.addConstraints(percentageLabelHorizonConstraints + percentageLabelVerticalConstraints)
     }
     
+    private func setPercentageLabel(){
+        percentageLabel.text = String(format: "%.0f %", progressView.progress * 100.0) + "%"
+    }
     private func executeCompleteHandler(){
         if hasCompletedTimer{
             if let handler = completeHandler{
                 progressView.progress = 1.0
-                percentageLabel.text = String(format: "%.0f %", progressView.progress * 100.0) + "%"
-                handler()
+                setPercentageLabel()
+                Timer.scheduledTimer(withTimeInterval: 0.5, repeats: false) { _ in
+                    handler()
+                }
             }
         }
     }
     
     public func complete(handler: @escaping ()->()){
         completeHandler = handler
+        executeCompleteHandler()
     }
     
     
