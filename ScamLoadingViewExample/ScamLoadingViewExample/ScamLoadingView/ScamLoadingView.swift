@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ScamLoadingView {
+open class ScamLoadingView {
     
     public let loadingViewController:UIAlertController
     private let percentageLabel = UILabel()
