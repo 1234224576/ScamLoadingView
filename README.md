@@ -19,7 +19,7 @@ let scam = ScamLoadingView(title: "loading...", limitValue: 0.8, arrivalTime: 10
 self.present(scam.loadingViewController, animated: true, completion: nil)
 
 DispatchQueue.global(qos: .default).async {
-	//Some processing
+    //Some processing
     Thread.sleep(forTimeInterval: 3.0)
     
     DispatchQueue.main.async {
