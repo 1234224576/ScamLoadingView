@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "ScamLoadingView"
-  s.version      = "0.1.2"
+  s.version      = "0.1.3"
   s.summary      = "Display a fake loading screen"
 
   # This description is used to generate tags and improve search results.
@@ -94,7 +94,7 @@ Pod::Spec.new do |s|
   #  Not including the public_header_files will make all headers public.
   #
 
-  s.source_files  = "ScamLoadingView/*.{h,m}"
+  s.source_files  = "ScamLoadingView/*.{h,swift}"
   # s.exclude_files = "Classes/Exclude"
 
   # s.public_header_files = "Classes/**/*.h"
